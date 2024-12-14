@@ -1,0 +1,98 @@
+-- ----------------------------------------------------------
+-- MDB Tools - A library for reading MS Access database files
+-- Copyright (C) 2000-2011 Brian Bruns and others.
+-- Files in libmdb are licensed under LGPL and the utilities under
+-- the GPL, see COPYING.LIB and COPYING files respectively.
+-- Check out http://mdbtools.sourceforge.net
+-- ----------------------------------------------------------
+
+-- That file uses encoding UTF-8
+
+CREATE TABLE [Charters]
+ (
+	[Ccode]			Text (2) NOT NULL, 
+	[Dcode]			Text (5) NOT NULL, 
+	[SchoolCode]			Text (7) NOT NULL, 
+	[CharterNumber]			Text (10) NOT NULL, 
+	[CharterName]			Text (100) NOT NULL, 
+	[ReportType]			Text (100) NOT NULL, 
+	[ReportLevel]			Text (30), 
+	[FundUsed]			Text (30), 
+	[K12ADA]			Double
+);
+
+CREATE TABLE [Function]
+ (
+	[Code]			Text (4) NOT NULL, 
+	[Title]			Text (250) NOT NULL
+);
+
+CREATE TABLE [Fund]
+ (
+	[Code]			Text (4) NOT NULL, 
+	[Title]			Text (250) NOT NULL
+);
+
+CREATE TABLE [Goal]
+ (
+	[Code]			Text (4) NOT NULL, 
+	[Title]			Text (250) NOT NULL
+);
+
+CREATE TABLE [LEAs]
+ (
+	[Ccode]			Text (2) NOT NULL, 
+	[Dcode]			Text (5) NOT NULL, 
+	[Dname]			Text (75) NOT NULL, 
+	[Dtype]			Text (50) NOT NULL, 
+	[K12ADA]			Double NOT NULL
+);
+
+CREATE TABLE [Object]
+ (
+	[Code]			Text (4) NOT NULL, 
+	[Title]			Text (250) NOT NULL
+);
+
+CREATE TABLE [Resource]
+ (
+	[Code]			Text (4) NOT NULL, 
+	[Title]			Text (250) NOT NULL
+);
+
+CREATE TABLE [UserGL]
+ (
+	[Ccode]			Text (2) NOT NULL, 
+	[Dcode]			Text (5) NOT NULL, 
+	[SchoolCode]			Text (7) NOT NULL, 
+	[Fiscalyear]			Text (4) NOT NULL, 
+	[Period]			Text (4) NOT NULL, 
+	[Colcode]			Text (4) NOT NULL, 
+	[Account]			Text (19) NOT NULL, 
+	[Fund]			Text (2), 
+	[Resource]			Text (4), 
+	[Projectyear]			Text (1), 
+	[Goal]			Text (4), 
+	[Function]			Text (4), 
+	[Object]			Text (4), 
+	[Value]			Numeric (18, 2)
+);
+
+CREATE TABLE [UserGL_Totals]
+ (
+	[Ccode]			Text (2) NOT NULL, 
+	[Dcode]			Text (5) NOT NULL, 
+	[Fiscalyear]			Text (4) NOT NULL, 
+	[Period]			Text (4) NOT NULL, 
+	[Colcode]			Text (4) NOT NULL, 
+	[Account]			Text (19) NOT NULL, 
+	[Fund]			Text (2), 
+	[Resource]			Text (4), 
+	[Projectyear]			Text (1), 
+	[Goal]			Text (4), 
+	[Function]			Text (4), 
+	[Object]			Text (4), 
+	[Value]			Numeric (18, 2)
+);
+
+
